@@ -1,0 +1,23 @@
+<ion-view view-title="Google books">
+    <ion-content  ng-controller = "booksController">
+
+        <ion-list style='background-color: #ea7272'>
+            <ion-item class="item-input">
+                <input type="text" required placeholder="Theme of the book"
+                       ng-model="subject">
+                <button class="button button-light button-royal ion-ios-lightbulb-outline"
+                        ng-click="livres()"> Search</button>
+            </ion-item>
+            <ion-item style='background-color: #ffc426' ng-repeat="book in books track by book.id" class="item-thumbnail-left item-icon-right">
+                <img ng-src='{{ book.volumeInfo.imageLinks.smallThumbnail }}' alt='{{ book.imageLinks.smallThumbnail }}'>
+                <h3 style='color: #552ae4'> {{book.volumeInfo.authors[0]}} </h3><br>
+                <p style='color: #01581d' >{{book.volumeInfo.title}}</p>
+                <p>Published date : {{book.volumeInfo.publishedDate}}</p>
+                <ion-option-button class="button-assertive ion-ionic icon-left"
+                                    ng-click="details($index)">
+                    details
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

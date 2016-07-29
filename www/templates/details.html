@@ -1,0 +1,12 @@
+<ion-view view-title="Book details">
+    <ion-content>
+
+        <img ng-src='{{ details.volumeInfo.imageLinks.thumbnail }}' alt='{{ details.imageLinks.thumbnail }}'>
+        <h3 style='color: #552ae4' ng-model="details.volumeInfo.authors[0]"> {{details.volumeInfo.authors[0]}} </h3>
+        <br>
+        <p style='color: #01581d' ng-model="details.volumeInfo.title">{{details.volumeInfo.title}}</p>
+        <p>{{ details.volumeInfo.description }}</p>
+        <p>{{ details.saleInfo.listPrice.amount}} {{ details.saleInfo.listPrice.currencyCode}}</p>
+
+    </ion-content>
+</ion-view>

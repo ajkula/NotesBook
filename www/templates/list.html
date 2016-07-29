@@ -1,0 +1,23 @@
+<ion-view view-title="List of your notes">
+    <ion-content>        
+        <ion-list>
+            <ion-item style="background-color: {{note.color}}" ng-repeat="note in notes track by note.id"
+                      href="#/edit/{{note.id}}"
+                      >
+                <h2>{{note.titre}}</h2>
+                <p>{{note.texte}}</p>
+                
+                <ion-option-button class="button-assertive ion-trash-b icon-left"
+                                   ng-click="remove(note.id)">
+                    delete
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+    <ion-footer-bar>
+        <a href="#/add" class="button icon-left ion-compose">New note</a>
+        
+        <a href="#/books" class="button icon-left ion-ionic"> Google books</a>
+    </ion-footer-bar>
+</ion-view>

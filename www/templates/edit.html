@@ -1,0 +1,26 @@
+<ion-view view-title="Add / modify notes">
+    <ion-content>
+        <div style="background-color:{{note.color}};">
+        <ion-list>
+            <ion-item class="item-input">
+                <input type="text" required placeholder="Title of your note"
+                       ng-model="note.titre">
+            </ion-item>
+            
+            <ion-item class="item-input">
+                <textarea rows="5" required placeholder="Text of your note"
+                          ng-model="note.texte"></textarea>
+            </ion-item>
+            
+            <ion-item>
+                <button class="button button-block button-calm"
+                        ng-click="saveNote()">Save note</button>
+            </ion-item>
+            <ion-item>
+                <button class="button button-block button-balanced"
+                        ng-click="switchColors()">Switch colors</button>
+            </ion-item>
+        </ion-list>
+            </div>
+    </ion-content>
+</ion-view>
